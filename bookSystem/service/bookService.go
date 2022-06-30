@@ -31,3 +31,10 @@ func GetLastBook() model.Book {
 	utils.Db.Last(&book)
 	return book
 }
+
+//通过分类查询书籍
+func GetBooksByKind(kind string) []model.Book{
+	var books []model.Book
+	utils.Db.Where("kind = ?", kind).Find(&books)
+	return books
+}

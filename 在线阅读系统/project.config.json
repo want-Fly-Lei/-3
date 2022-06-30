@@ -35,13 +35,14 @@
             "outputPath": ""
         },
         "disableUseStrict": false,
-        "minifyWXML": true
+        "minifyWXML": true,
+        "ignoreUploadUnusedFiles": true
     },
     "simulatorType": "wechat",
     "simulatorPluginLibVersion": {},
     "condition": {},
     "srcMiniprogramRoot": "miniprogram/",
-    "appid": "wx388c3b6e5b776506",
+    "appid": "wx046853b4bcb50ca7",
     "libVersion": "2.24.3",
     "editorSetting": {
         "tabIndent": "insertSpaces",

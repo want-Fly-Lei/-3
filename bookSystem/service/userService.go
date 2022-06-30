@@ -22,9 +22,10 @@ func SelectUserLogin(username, password string) model.User {
 func RegisterUser(user model.User) error {
 	user.Root = 0 //防止权限问题
 	res := utils.Db.Select("Username", "Email", "Password", "Root").Create(&user)
-	if res.Error != nil {
-		return res.Error
-	}
-	
-	return nil
+	return res.Error
+}
+
+func ResetUserById(id int, user model.User) error {
+	res := utils.Db.Model(&user).Where("id = ?", id).Updates(user)
+	return res.Error
 }

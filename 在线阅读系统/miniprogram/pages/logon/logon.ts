@@ -8,7 +8,8 @@ Page({
      */
     data: {
         username:null,
-        password:null
+        password:null,
+        msg:null
     },
 
     input1:function(e){
@@ -36,9 +37,43 @@ Page({
 
     tomine:function(){
         app.globalData.userinfo={username:this.data.username,password:this.data.password}
-        if(app.globalData.userinfo.username!=null && app.globalData.userinfo.password!=null){
-            wx.redirectTo({url:"../mine/mine"})
-        }
+        wx.request({
+            url: "http://localhost:8086/user/login",
+            data: {
+              'username': this.data.username,
+              'password': this.data.password,
+            },
+            method: "POST",
+            header: {
+              'content-type': 'application/x-www-form-urlencoded'//注意个人使用application/json获取不到数据
+            },
+            success: function (res) {//res.data.XXX是取到后端的数据如果和admin是等的就显示登录成功跳转的相应的小程序页面
+              if (res.data.msg == "") {
+                wx.showToast({
+                  title: '登录成功',
+                  icon: 'success',
+                  duration: 20000
+                })
+                setTimeout(function(){
+                  wx.hideToast();
+                }),
+                  wx.redirectTo({
+                    url: '../mine/mine?username=' + res.data.username,
+                  })
+              } else {
+                wx.showToast({
+                  title: '账号或密码错误',
+                  icon: 'loading',
+                  duration: 2000
+                })
+              }
+            }
+          }),
+        
+        // if(app.globalData.userinfo.username!=null && app.globalData.userinfo.password!=null){
+        //     wx.redirectTo({url:"../mine/mine"})
+            
+        // }
         console.log(app.globalData.userinfo)
     },
 

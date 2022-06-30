@@ -49,3 +49,19 @@ func AllBook(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, service.SelectAllBook())
 }
 
+//同分类查询书
+func SelectBookByKind(ctx *gin.Context) {
+	var kind string = ctx.Query("kind")
+	fmt.Println(kind)
+	var books []model.Book = service.GetBooksByKind(kind)
+	if len(books) == 0 || books == nil {
+		ctx.JSON(http.StatusBadRequest, gin.H {
+			"msg":"该分类暂无书籍",
+		})
+	} else {
+		ctx.JSON(http.StatusOK, gin.H {
+			"msg":"",
+			"books":books,
+		})
+	}
+}

@@ -70,3 +70,25 @@ func UserRegister(ctx *gin.Context) {
 		})
 	}
 }
+
+//用户修改2功能
+func ReSetUser(ctx *gin.Context) {
+	var err error
+	var user model.User
+	//把传入的参数绑定到user
+	if err = ctx.ShouldBind(&user); err == nil {
+		if err = service.ResetUserById(user.Id,user); err == nil {
+			ctx.JSON(http.StatusOK, gin.H {
+				"msg":"ok",
+			})
+		} else {
+			ctx.JSON(http.StatusRequestEntityTooLarge, gin.H {
+				"msg":err.Error(),
+			})
+		}
+	} else {
+		ctx.JSON(http.StatusBadRequest, gin.H{
+			"msg": err.Error(),
+		})
+	}
+}
