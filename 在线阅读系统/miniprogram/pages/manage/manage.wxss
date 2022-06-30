@@ -1,0 +1,14 @@
+/* pages/manage/manage.wxss */
+.aaa{
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+}
+
+.db_ui{
+    /* text-align: left !important; */
+    font-size: 17px !important;
+    padding-left: 10 !important;
+    display: flex;
+    padding: 10px 10px;
+}

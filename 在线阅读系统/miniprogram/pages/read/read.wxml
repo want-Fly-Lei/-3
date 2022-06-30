@@ -1,0 +1,13 @@
+<!--pages/read/read.wxml-->
+<view class="v1" >
+    <image class="v2" src="/image/icon/manage.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+    <text class="" selectable="false" space="false" decode="false">海洋之心</text>
+    <button class="button-confirm" bindtap="toread">开始阅读</button>
+</view>
+
+<view class="v5">
+    <text class="v4">简介</text>
+    <text class="v3">乌军方宣称最近又对邻近敖德萨的蛇岛进行了一轮打击。根据美国商业卫星拍摄的图像，似乎蛇岛上的俄军遭到了“相当大的损失”，但俄军方则给出了完全相反的答案。其实，无论本次乌军打击蛇岛的战果如何，有一点非常值得关注，针对本次蛇岛打击行动，美国等西方国家的商业遥感卫星、战略无人侦察机以及即将部署到位的“海马斯”系统等装备在背后操碎了心。
+    </text>
+    
+</view>

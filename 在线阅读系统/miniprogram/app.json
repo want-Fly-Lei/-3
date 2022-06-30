@@ -1,0 +1,64 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logon/logon",
+    "pages/logon1/logon1",
+    "pages/newlogon/newlogon",
+  
+    "pages/user/user",
+    "pages/bookshelf/bookshelf",
+    "pages/mine/mine",
+    "pages/sort/sort",
+    
+    "pages/userinfo/userinfo",
+    "pages/changeinfo/changeinfo",
+    "pages/manage/manage",
+    "pages/read/read",
+    "pages/read1/read1",
+    "pages/search/search"
+    
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#00BCD4",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "white"
+  },
+
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#ff2d4a",
+    "backgroundColor": "#fafafa",
+    "position": "bottom",
+    "borderStyle": "black",
+      "list": [
+        {
+            "pagePath": "pages/index/index",
+            "text": "首页",
+            "iconPath": "image/icon/index_icon.png",
+            "selectedIconPath": "image/icon/index_icon_select.png"
+        },
+        {
+            "pagePath": "pages/bookshelf/bookshelf",
+            "text": "书架",
+            "iconPath": "image/icon/bookshelf_icon.png",
+            "selectedIconPath": "image/icon/bookshelf_icon_select.png"
+        },
+        {
+            "pagePath": "pages/sort/sort",
+            "text": "分类",
+            "iconPath": "image/icon/sort_icon.png",
+            "selectedIconPath": "image/icon/sort_icon_select.png"
+        },
+        {
+            "pagePath": "pages/mine/mine",
+            "text": "我的",
+            "iconPath": "image/icon/mine_icon.png",
+            "selectedIconPath": "image/icon/mine_icon_select.png"
+        }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

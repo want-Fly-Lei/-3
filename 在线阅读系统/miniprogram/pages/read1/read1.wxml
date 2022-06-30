@@ -1,0 +1,13 @@
+<!--pages/read1/read1.wxml-->
+<view wx:if="{{cl1==0||cl1==1}}" class="wenke_list {{cl1==0&&cl2==1?'list_right':cl1==1&&cl2==0?'listleft':''}} {{cl1==0?'list_true':''}}" style="" bindtouchstart='touchStart' bindtouchmove='touchMove'>
+// 首页（我这里是做了一个目录）
+// 如果不想要删了然后改一下下面的条件👇（统一减一）
+</view>
+<view wx:if="{{cl1==(i+1)||cl1==(i+2)||cl1==(i)}}" wx:for='{{list.data}}' wx:for-index="i" wx:key="*this" class="wenke_list {{cl1==(i+1)&&cl2==(i+2)?'list_right':cl1==(i+2)&&cl2==(i+1)?'listleft':cl1==(i+2)&&cl2==(i+3)?'list_false':cl1==i&&fan!=1?'list_false':''}} {{cl1==i+1?'list_true':''}} "bindtouchstart='touchStart' bindtouchmove='touchMove'>
+//主要内容
+</view>
+<view wx:if="{{cl1==list.data.length||cl1==list.data.length+1}}" class="wenke_list {{cl1==0&&cl2==1?'list_right':cl1==1&&cl2==0?'listleft':''}} {{cl1==0?'list_true':''}}" bindtouchstart='touchStart' bindtouchmove='touchMove'>
+// 最后一页（我这里做了一个返回书架的选择）
+// 如果不想要删了就可以
+</view>
+

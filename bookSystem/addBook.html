@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>添加书本</title>
+</head>
+<body>
+    <form action="http://localhost:8086/book/addBook" method="post" enctype="multipart/form-data">
+        书名: <input type="text" name="bookname"> <br>
+        作者： <input type="text" name="author"> <br>
+        描述： <textarea name="description" id="" cols="30" rows="10"></textarea> <br>
+        出版社: <input type="text" name="press"> <br>
+        分类: <select name="kind" id="">
+            <option value="武侠">武侠</option>
+            <option value="仙侠">仙侠</option>
+            <option value="玄幻">玄幻</option>
+            <option value="都市">都市</option>
+            <option value="科技">科技</option>
+            <option value="体育">体育</option>
+            <option value="悬疑">悬疑</option>
+            <option value="现实">现实</option>
+            <option value="历史">历史</option>
+            <option value="游戏">游戏</option>
+            <option value="军事">军事</option>
+            <option value="二次元">二次元</option>
+        </select> <br>
+        封面：<input type="file" name="f1" id=""> <br>
+        <input type="submit" value="添加">
+    </form>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!--pages/logon/logon.wxml-->
+<view>
+    <form bindsubmit="formLogin">
+        <text class="text-username">用户名:</text>
+        <input name="username" class="input-username" placeholder="输入用户名" type="number" bindinput="input1" maxlength="20"/>
+
+        <text class="text-username">密码:</text>
+        <input name="password" class="input-username" placeholder="输入密码" type="password" bindinput="input2" confirm-type="next" maxlength="20"/>
+
+        <button class="button-confirm" formType="submit" bindtap="tomine">登录</button>
+    </form>
+
+    <button class="button-confirm" bindtap="tonewlogon">注册</button>
+    <button class="button-confirm" bindtap="tologon1">管理员登录</button>
+</view>

@@ -1,0 +1,16 @@
+<!--pages/changeinfo/changeinfo.wxml-->
+<view>
+    <form bindsubmit="formLogin">
+        <text class="text-username">用户名:</text>
+        <input class="input-username" placeholder="输入用户名(必填)" type="text" bindinput="input1" maxlength="20"/>
+
+        <text class="text-username">密码:</text>
+        <input class="input-username" placeholder="输入密码(必填)" type="password" bindinput="input2" confirm-type="next" maxlength="20"/>
+
+        <text class="text-username">邮箱:</text>
+        <input class="input-username" placeholder="输入邮箱" type="text" bindinput="input3" confirm-type="next" maxlength="20"/>
+
+    </form>
+
+    <button class="button-confirm" bindtap="change">确认修改</button>
+</view>

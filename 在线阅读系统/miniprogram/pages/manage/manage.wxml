@@ -1,0 +1,12 @@
+<!--pages/manage/manage.wxml-->
+<view>
+    <navigator class="db_ui" hover-class="navigator-hover" url="/pages/userinfo/userinfo">
+        <image class="aaa" src="/image/icon/mine_icon.png"></image>
+        <view>书籍管理</view>
+    </navigator>
+
+    <navigator class="db_ui" hover-class="navigator-hover" url="/pages/search/search">
+        <image class="aaa" src="/image/icon/writer_icon.png"></image>
+        <view>读者信息管理</view>
+    </navigator>
+</view>

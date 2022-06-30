@@ -1,0 +1,32 @@
+<!--pages/mine/mine.wxml-->
+<view class="v1">
+    <image class="image_size" src="/image/icon/mine_icon_select.png"></image>
+    <view class="word_size">{{username}}</view>
+</view>
+
+<view>
+    <navigator class="db_ui" hover-class="navigator-hover" url="/pages/userinfo/userinfo">
+        <image class="aaa" src="/image/icon/mine_icon.png"></image>
+        <view>个人信息</view>
+    </navigator>
+
+    <navigator class="db_ui" hover-class="navigator-hover" url="/pages/search/search">
+        <image class="aaa" src="/image/icon/writer_icon.png"></image>
+        <view>成为作者</view>
+    </navigator>
+
+    <navigator class="db_ui" hover-class="navigator-hover" url="/pages/search/search">
+        <image class="aaa" src="/image/icon/about_icon.png"></image>
+        <view>关于我们</view>
+    </navigator>
+
+    <view class="db_ui" bindtap="gotomanage">
+        <image class="aaa" src="/image/icon/manage.png"></image>
+        <view>管理员权限</view>
+    </view>
+
+    <view class="db_ui" bindtap="wash">
+        <image class="aaa" src="/image/icon/dele.png"></image>
+        <view>退出登录</view>
+    </view>
+</view>

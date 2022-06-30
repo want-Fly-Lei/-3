@@ -1,0 +1,19 @@
+<!--pages/logon1/logon1.wxml-->
+<view>
+    <form bindsubmit="formLogin">
+        <text class="text-username">用户名:</text>
+        <input name="username" class="input-username" placeholder="输入用户名" type="number" bindinput="input1" maxlength="20"/>
+
+        <text class="text-username">密码:</text>
+        <input name="password" class="input-username" placeholder="输入密码" type="password" bindinput="input2" confirm-type="next" maxlength="20"/>
+
+        <button class="button-confirm" formType="submit">登录</button>
+    </form>
+
+    <button class="button-confirm" bindtap="tonewlogon">注册</button>
+    <!-- <navigator url="/pages/logon/logon" hover-class="navigator-hover">
+        <view class="g">
+            用户登录
+        </view>
+    </navigator> -->
+</view>

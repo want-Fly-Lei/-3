@@ -1,0 +1,16 @@
+<!--pages/userinfo/userinfo.wxml-->
+<view>
+    <form bindsubmit="formLogin">
+        <text class="text-username">用户名:</text>
+        <view class="input-username">{{username}}</view>
+
+        <text class="text-username">密码:</text>
+        <view class="input-username">{{password}}</view>
+
+        <text class="text-username">邮箱:</text>
+        <view class="input-username">{{email}}</view>
+
+    </form>
+
+    <button class="button-confirm" bindtap="changeinfo">修改信息</button>
+</view>

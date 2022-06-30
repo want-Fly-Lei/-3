@@ -1,0 +1,52 @@
+<!--index.wxml-->
+<view class="v1" >
+    <navigator class="search-border" hover-class="navigator-hover" url="/pages/search/search">
+        <icon class="line-center" type="search" size="13"></icon>
+        <text class="line-center">搜索</text>
+    </navigator>
+</view>
+
+
+<swiper class="swiper-container" indicator-dots autoplay interval="3000">
+    <swiper-item class="swiper-iamge">
+        <image src="/image/icon/index_icon.png"></image>
+    </swiper-item>
+
+    <swiper-item class="swiper-iamge">
+        <image src="/image/icon/mine_icon.png"></image>
+    </swiper-item>
+
+    <swiper-item class="swiper-iamge">
+        <image src="/image/icon/sort_icon.png"></image>
+    </swiper-item>
+
+    <swiper-item class="swiper-iamge">
+        <image src="/image/icon/bookshelf_icon.png"></image>
+    </swiper-item>
+</swiper>
+
+<view class="weui-flex">
+    <navigator class="weui-flex" url="/pages/bookshelf/bookshelf" hover-class="navigator-hover" open-type="switchTab">
+        <view>
+            <image class="image" src="/image/icon/bookshelf_icon_select.png" mode="aspectFill" lazy-load="false">
+            </image>
+            <view class="placeholder"> 书架</view>
+        </view>
+    </navigator>
+
+    <navigator class="weui-flex" url="/pages/sort/sort" hover-class="navigator-hover" open-type="switchTab">
+        <view>
+            <image class="image" src="/image/icon/sort_icon_select.png" mode="aspectFill" lazy-load="false">
+            </image>
+            <view class="placeholder"> 分类</view>
+        </view>
+    </navigator>
+
+    <navigator class="weui-flex" url="/pages/sort/sort" hover-class="navigator-hover" open-type="switchTab">
+        <view>
+            <image class="image" src="/image/icon/writer_icon.png" mode="aspectFill" lazy-load="false">
+            </image>
+            <view class="placeholder"> 成为作者</view>
+        </view>
+    </navigator>
+</view>
