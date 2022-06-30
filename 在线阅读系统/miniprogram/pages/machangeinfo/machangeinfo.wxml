@@ -1,0 +1,15 @@
+<!--pages/machangeinfo/machangeinfo.wxml-->
+<view>
+    <form bindsubmit="formLogin">
+        <text class="text-username">用户名:</text>
+        <input class="input-username" placeholder="输入用户名" type="number" bindinput="input1" maxlength="20"/>
+
+        <text class="text-username">密码:</text>
+        <input class="input-username" placeholder="输入密码" type="password" bindinput="input2" confirm-type="next" maxlength="20"/>
+
+        <text class="text-username">邮箱:</text>
+        <input class="input-username" placeholder="输入密码" type="password" bindinput="input3" confirm-type="next" maxlength="20"/>
+    </form>
+
+    <button class="button-confirm" bindtap="tochange">确认修改</button>
+</view>

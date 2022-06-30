@@ -1,0 +1,4 @@
+/* pages/aboutus/aboutus.wxss */
+page{
+    background-color: rgb(242, 235, 238);
+}

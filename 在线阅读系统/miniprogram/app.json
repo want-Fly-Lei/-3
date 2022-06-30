@@ -15,6 +15,9 @@
     "pages/manage/manage",
     "pages/read/read",
     "pages/read1/read1",
+    "pages/aboutus/aboutus",
+    "pages/manageuserinfo/manageuserinfo",
+    "pages/machangeinfo/machangeinfo",
     "pages/search/search"
     
     

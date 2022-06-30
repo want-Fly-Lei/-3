@@ -42,11 +42,11 @@
         </view>
     </navigator>
 
-    <navigator class="weui-flex" url="/pages/sort/sort" hover-class="navigator-hover" open-type="switchTab">
+    <navigator class="weui-flex" url="/pages/aboutus/aboutus" hover-class="navigator-hover">
         <view>
-            <image class="image" src="/image/icon/writer_icon.png" mode="aspectFill" lazy-load="false">
+            <image class="image" src="/image/icon/about_icon.png" mode="aspectFill" lazy-load="false">
             </image>
-            <view class="placeholder"> 成为作者</view>
+            <view class="placeholder"> 关于我们</view>
         </view>
     </navigator>
 </view>

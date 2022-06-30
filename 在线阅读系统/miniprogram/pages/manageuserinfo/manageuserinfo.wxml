@@ -1,0 +1,20 @@
+<!--pages/manageuserinfo/manageuserinfo.wxml-->
+<view class="v4" wx:for="{{}}">
+    <view class="v1" bindtap="change">
+        <!-- <text class="v2">id:{{item.id}}</text> -->
+        <text class="v3">username:{{item.username}}</text>
+    </view>
+</view>
+
+<view class="v4">
+    <view class="v1" bindtap="change">
+        <text class="v2">id:</text>
+        <text class="v3">username:</text>      
+    </view>
+
+    <view class="v1">
+        <text class="v2">id:</text>
+        <text class="v3">username:</text>
+    </view>
+</view>
+

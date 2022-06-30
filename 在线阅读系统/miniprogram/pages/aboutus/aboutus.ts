@@ -1,23 +1,10 @@
-// pages/search/search.ts
-var app =  getApp();
-
-
+// pages/aboutus/aboutus.ts
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        data_input:null
-    },
-
-    input:function(e){
-        this.setData({data_input:e.detail.value})
-        console.log(e)
-    },
-
-    submitSearch:function(){
-        console.log(this.data.data_input)
 
     },
 

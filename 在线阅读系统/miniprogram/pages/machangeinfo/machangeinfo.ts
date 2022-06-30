@@ -1,5 +1,5 @@
-// pages/logon/logon.ts
-var app=getApp();
+// pages/machangeinfo/machangeinfo.ts
+var app=getApp()
 
 Page({
 
@@ -8,7 +8,8 @@ Page({
      */
     data: {
         username:null,
-        password:null
+        password:null,
+        email:null
     },
 
     input1:function(e){
@@ -22,33 +23,21 @@ Page({
         console.log(this.data.password)
     },
 
-    tologon1:function(){
-        wx.navigateTo({
-            url:"../logon1/logon1"
-        })
+    input3:function(e){
+        this.setData({email:e.detail.value})
+        console.log(this.data.email)
     },
 
-    tonewlogon:function(){
-        wx.navigateTo({
-            url:"../newlogon/newlogon"
-        })
-    },
-
-    tomine:function(){
-        app.globalData.userinfo={username:this.data.username,password:this.data.password}
-        if(app.globalData.userinfo.username!=null && app.globalData.userinfo.password!=null){
-            wx.redirectTo({url:"../mine/mine"})
-        }
-        console.log(app.globalData.userinfo)
+    tochange:function(){
+        app.globalData.mana_userinfo={username:this.data.username,password:this.data.password,email:this.data.email}
+        wx.navigateBack({delta:1})
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad() {
-        if(app.globalData.userinfo!=null){
-            wx.redirectTo({url:"../mine/mine"})
-        }
+        // this.setData({username:app.globalData.userinfo.username,password:app.globalData.userinfo.password,email:app.globalData.userinfo.email})
     },
 
     /**

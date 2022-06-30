@@ -1,4 +1,29 @@
 <!--pages/bookshelf/bookshelf.wxml-->
-<view>
-  这里是书架
+<view class="">
+  <view class="v2">
+    <view class="v1" hover-class="none" hover-stop-propagation="false">
+      <image class="" src="/image/icon/index_icon.png" ></image>
+      <text class="">开心</text>
+    </view>
+
+    <view class="v1" hover-class="none" hover-stop-propagation="false">
+      <image class="" src="/image/icon/index_icon.png"></image>
+      <text class="">开心</text>
+    </view>
+
+    <view class="v1" hover-class="none" hover-stop-propagation="false">
+      <image class="" src="/image/icon/index_icon.png"></image>
+      <text class="">开心</text>
+    </view>
+
+    <view class="v1" hover-class="none" hover-stop-propagation="false">
+      <image class="" src="/image/icon/index_icon.png" ></image>
+      <text class="">开心</text>
+    </view>
+
+    <view class="v1" hover-class="none" hover-stop-propagation="false">
+      <image class="" src="/image/icon/index_icon.png" ></image>
+      <text class="">开心</text>
+    </view>
+  </view>
 </view>

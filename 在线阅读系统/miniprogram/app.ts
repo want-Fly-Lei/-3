@@ -364,7 +364,8 @@ App({
       ]
     }
   ],
-    now_bookinfo:null
+    now_bookinfo:null,
+    mana_userinfo:null
   },
 
 

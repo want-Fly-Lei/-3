@@ -5,7 +5,7 @@
         <view>书籍管理</view>
     </navigator>
 
-    <navigator class="db_ui" hover-class="navigator-hover" url="/pages/search/search">
+    <navigator class="db_ui" hover-class="navigator-hover" url="/pages/manageuserinfo/manageuserinfo">
         <image class="aaa" src="/image/icon/writer_icon.png"></image>
         <view>读者信息管理</view>
     </navigator>
