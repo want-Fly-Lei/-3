@@ -29,3 +29,10 @@ func ResetUserById(id int, user model.User) error {
 	res := utils.Db.Model(&user).Where("id = ?", id).Updates(user)
 	return res.Error
 }
+
+//
+func SelectAllUse()  []model.User {
+	var users []model.User
+	utils.Db.Find(&users)
+	return users
+}

@@ -52,7 +52,7 @@ func AllBook(ctx *gin.Context) {
 //同分类查询书
 func SelectBookByKind(ctx *gin.Context) {
 	var kind string = ctx.Query("kind")
-	fmt.Println(kind)
+	//fmt.Println(kind)
 	var books []model.Book = service.GetBooksByKind(kind)
 	if len(books) == 0 || books == nil {
 		ctx.JSON(http.StatusBadRequest, gin.H {
@@ -62,6 +62,65 @@ func SelectBookByKind(ctx *gin.Context) {
 		ctx.JSON(http.StatusOK, gin.H {
 			"msg":"",
 			"books":books,
+		})
+	}
+}
+
+//模糊查询书名
+func SelectByBookNameMoHu(ctx *gin.Context) {
+	var bookname string = ctx.Query("bookname")
+	//fmt.Println(kind)
+	var books []model.Book = service.GetBooksByBookNameMohu(bookname)
+	if len(books) == 0 || books == nil {
+		ctx.JSON(http.StatusBadRequest, gin.H {
+			"msg":"暂无该名称书籍",
+		})
+	} else {
+		ctx.JSON(http.StatusOK, gin.H {
+			"msg":"",
+			"books":books,
+		})
+	}
+}
+
+//通过书名查找
+func SelectBookByBid(ctx *gin.Context) {
+	var book model.Book
+	var err error 
+	if err = ctx.ShouldBind(&book); err == nil {
+		if book = service.GetBookByBid(book.Id); book.Id != 0 { 
+			ctx.JSON(http.StatusOK,book)
+		} else {
+			ctx.JSON(http.StatusUnprocessableEntity, gin.H {
+				"msg":"无法找到",
+			})
+		}
+		
+	} else { //绑定失败
+		ctx.JSON(http.StatusBadRequest, gin.H {
+			"msg":err.Error(),
+		})
+	}
+}
+
+//更新图书信息
+func UpdateBook(ctx *gin.Context) {
+	var book model.Book
+	var err error
+	if err = ctx.ShouldBind(&book); err == nil {
+		if err = service.UpdateBookById(book.Id,book); err == nil { 
+			ctx.JSON(http.StatusOK,gin.H {
+				"msg":"ok",
+			})
+		} else {
+			ctx.JSON(http.StatusUnprocessableEntity, gin.H {
+				"msg":"更新失败",
+			})
+		}
+		
+	} else { //绑定失败
+		ctx.JSON(http.StatusBadRequest, gin.H {
+			"msg":err.Error(),
 		})
 	}
 }

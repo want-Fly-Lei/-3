@@ -6,25 +6,13 @@
     <text class="line-center">搜索</text>
     </navigator>
 </view>
-<view class='tui-fixed-left'>
-  <scroll-view class='tui-city-scroll' scroll-x="true" scroll-y="true" style='height:92%;' scroll-with-animation="true"
-    scroll-top="{{leftMenuTop}}">
-    <text class="menu-item {{index === currentActiveIndex ? 'menu-active' : ''}}" wx:for="{{navList}}" wx:key="unique"
-      data-index="{{index}}" id='{{index}}' catchtap='changeMenu'>{{item.c_name}}</text>
-  </scroll-view>
-</view>
-<!-- 右侧滚动商品 -->
-<view class='content'>
-  <scroll-view class='tui-city-scroll-y' scroll-y="true" style='height:92%;' scroll-with-animation="true"
-    scroll-top="{{rightProTop}}" bindscroll="scroll">
-    <view class='pro-item' wx:for="{{navList}}" wx:key="unique">
-      <view class='tui-list-head' id='NAV{{index}}'>{{item.c_name}}</view>
-      <view class='tui-list-li'>
-        <view class='goods-box' wx:for-item='items' wx:for="{{item.list}}" wx:key="unique" bindtap="seebook">
-          <image id="{{items.id}}" class='goodsImg' src='{{items.url}}' data-c_id="{{item.c_id}}"></image>
-          <view id="{{items.id}}" class='goodsName' data-c_id="{{item.c_id}}">{{items.goodsName}}</view>
+
+<view>
+    <view class="s2" wx:for="{{books}}" bindtap="toseebook" wx:key="id">
+        <image id="{{item.id}}" src="{{item.cover}}"></image>
+        <view class="s1">
+            <view>{{item.bookname}}</view>
+            <view>{{item.author}}</view>
         </view>
-      </view>
     </view>
-  </scroll-view>
 </view>

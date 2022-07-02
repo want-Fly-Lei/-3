@@ -7,7 +7,7 @@
 </view>
 
 <view class="v4">
-    <view class="v1" bindtap="change">
+    <!-- <view class="v1" bindtap="change">
         <text class="v2">id:</text>
         <text class="v3">username:</text>      
     </view>
@@ -15,6 +15,22 @@
     <view class="v1">
         <text class="v2">id:</text>
         <text class="v3">username:</text>
+    </view> -->
+    <input type="text"/>
+</view>
+
+<button bindtap="searchall">全部搜索</button>
+<button bindtap="searchByUserName">搜索用户名</button>
+
+<view>
+    <view class="s2" wx:for="{{users}}" wx:key="id">
+        <view class="s1">
+            <view>{{item.username}}</view>
+            <view>{{item.email}}</view>
+            <view>{{item.root}}</view>
+            <View bindtap="change">修改</View>
+        </view>
     </view>
 </view>
+
 

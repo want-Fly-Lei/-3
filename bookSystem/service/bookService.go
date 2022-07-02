@@ -38,3 +38,23 @@ func GetBooksByKind(kind string) []model.Book{
 	utils.Db.Where("kind = ?", kind).Find(&books)
 	return books
 }
+
+//通过模糊查询书籍
+func GetBooksByBookNameMohu(bookname string) []model.Book{
+	var books []model.Book
+	utils.Db.Where("bookname like ?", utils.ToMOhu(bookname)).Find(&books)
+	return books
+}
+
+//通过书id查找
+func GetBookByBid(bid int) model.Book{
+	var book model.Book
+	utils.Db.First(&book, bid)
+	return book
+}
+
+//通过书id更新图书信息
+func UpdateBookById(id int, book model.Book) error{
+	res := utils.Db.Update(&book)
+	return res.Error
+}

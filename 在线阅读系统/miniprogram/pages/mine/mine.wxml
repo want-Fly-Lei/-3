@@ -20,10 +20,12 @@
         <view>关于我们</view>
     </navigator>
 
-    <view class="db_ui" bindtap="gotomanage">
+    <block wx:if="{{root==1}}">
+        <view class="db_ui" bindtap="gotomanage">
         <image class="aaa" src="/image/icon/manage.png"></image>
         <view>管理员权限</view>
     </view>
+    </block>
 
     <view class="db_ui" bindtap="wash">
         <image class="aaa" src="/image/icon/dele.png"></image>

@@ -29,3 +29,20 @@
 	padding: 0 10rpx;
 	background: #fff;
 }
+
+image{
+    height: 150rpx;
+    width: 150rpx;
+}
+
+.s1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.s2{
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+}

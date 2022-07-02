@@ -9,7 +9,7 @@
 
 <swiper class="swiper-container" indicator-dots autoplay interval="3000">
     <swiper-item class="swiper-iamge">
-        <image src="/image/icon/index_icon.png"></image>
+        <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F1114%2F0PR0115136%2F200PQ15136-1-1200.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1659233512&t=0f473db63b04970c4c3fae24a48d7e0c"></image>
     </swiper-item>
 
     <swiper-item class="swiper-iamge">

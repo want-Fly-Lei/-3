@@ -9,6 +9,6 @@ var (
 )
 
 //模糊查询
-func toMOhu(condition string) string {
+func ToMOhu(condition string) string {
 	return "%" + condition + "%"
 }

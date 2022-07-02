@@ -9,11 +9,52 @@ Page({
         password:null,
         email:null,
         root:null,
-        id:null
+        id:null,
+        users:[]
     },
 
     change:function(){
-        wx.navigateTo({url:"../machangeinfo/machangeinfo"})
+        wx.navigateTo({url:"../machangeinfo/machangeinfo?id=" + this.data.id})
+    },
+
+    searchall:function() {
+        var that = this
+        wx.request({
+            url: "http://localhost:8086/user/allUser",
+            method: "GET",
+            header: {
+                'content-type': 'application/x-www-form-urlencoded'//注意个人使用application/json获取不到数据
+            },
+            success: function (res) {//res.data.XXX是取到后端的数据如果和admin是等的就显示登录成功跳转的相应的小程序页面
+                // console.log(res.data)
+                that.setData({ users: res.data })
+                app.globalData.users = that.data.users
+                if (1) {
+                    wx.showToast({
+                        title: '查询成功',
+                        icon: 'success',
+                        duration: 20000
+                    })
+                    that.setData({ users: res.data })
+                    app.globalData.users = that.data.users
+                    // console.log(that.data.books)
+                    setTimeout(function () {
+                        wx.hideToast();
+                    })
+
+                } else {
+                    wx.showToast({
+                        title: '查询错误',
+                        icon: 'loading',
+                        duration: 2000
+                    })
+                }
+            }
+        })
+    },
+
+    searchByUserName:function() {
+
     },
 
     /**

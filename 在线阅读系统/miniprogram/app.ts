@@ -364,8 +364,11 @@ App({
       ]
     }
   ],
+    books:[],
     now_bookinfo:null,
-    mana_userinfo:null
+    mana_userinfo:null,
+    seeingbook:null,
+    booksearch:[]
   },
 
 

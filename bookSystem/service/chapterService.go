@@ -26,3 +26,10 @@ func GetChapterContextByBidAndCid(bid, cid int) model.Chapter {
 	utils.Db.Where("bid = ? and cid = ?",bid, cid).First(&chapter)
 	return chapter
 }
+
+//更新章节
+func UploadChapterByCid(chapter model.Chapter) error {
+	//更新章节，基本上只用更新时间戳即可，内容是通过写文件进去的
+	res := utils.Db.Model(&chapter).Where("cid = ? and bid = ?",chapter.Cid, chapter.Bid).Update("time",chapter.Time)
+	return res.Error
+}

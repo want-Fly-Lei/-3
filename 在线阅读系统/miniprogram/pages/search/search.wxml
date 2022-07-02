@@ -5,3 +5,13 @@
         <button   bindtap="submitSearch" size="mini">搜索</button>
     </view>
 </view>
+
+<view>
+    <view class="s2" wx:for="{{searchbook}}" bindtap="toseebook" wx:key="id">
+        <image id="{{item.id}}" src="{{item.cover}}"></image>
+        <view class="s1">
+            <view>{{item.bookname}}</view>
+            <view>{{item.author}}</view>
+        </view>
+    </view>
+</view>

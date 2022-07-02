@@ -29,10 +29,47 @@ Page({
     },
 
     getnewuser:function(){
-        if(this.data.username!=null && this.data.password!=null &&this.data.email!=null){
-            app.globalData.userinfo={username:this.data.username,password:this.data.password,email:this.data.email}
-            wx.redirectTo({url:"../logon/logon"})   
-        }
+        // if(this.data.username!=null && this.data.password!=null &&this.data.email!=null){
+        //     app.globalData.userinfo={username:this.data.username,password:this.data.password,email:this.data.email}
+        //     wx.redirectTo({url:"../logon/logon"})   
+        // }
+
+        var that = this;
+        wx.request({
+            url: "http://localhost:8086/user/register",
+            data: {
+              'username': this.data.username,
+              'password': this.data.password,
+              'email':this.data.email
+            },
+            method: "POST",
+            header: {
+              'content-type': 'application/x-www-form-urlencoded'//注意个人使用application/json获取不到数据
+            },
+            success: function (res) {//res.data.XXX是取到后端的数据如果和admin是等的就显示登录成功跳转的相应的小程序页面
+              if (res.data.msg == "ok") {
+                wx.showToast({
+                  title: '注册成功',
+                  icon: 'success',
+                  duration: 20000
+                }),
+                // that.setData({username:res.data.username,password:res.data.password,email:res.data.email})
+                app.globalData.userinfo={username:that.data.username,password:that.data.password,email:that.data.email}
+                setTimeout(function(){
+                  wx.hideToast();
+                }),
+                  wx.redirectTo({
+                    url: '../mine/mine?username=' + res.data.username,
+                  })
+              } else {
+                wx.showToast({
+                  title: '账号或密码错误',
+                  icon: 'loading',
+                  duration: 2000
+                })
+              }
+            }
+          })
         // wx.redirectTo({url:"../logon/logon"})
     },
 

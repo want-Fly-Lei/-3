@@ -13,3 +13,18 @@
 .v3{
     margin-left: 30px;
 }
+
+.v4 {
+    width: 80%;
+    border: 1rpx solid;
+    text-align: center;
+    margin-left: 10%;
+}
+
+.s2 {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5%;
+    border: 1rpx solid;
+    text-align: center;
+}

@@ -7,7 +7,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-        usename:null
+        usename:null,
+        root:null
     },
 
     wash:function(){
@@ -29,7 +30,7 @@ Page({
             wx.redirectTo({url:"../logon/logon"})
         }
         else{
-            this.setData({username:app.globalData.userinfo.username})
+            this.setData({username:app.globalData.userinfo.username,root:app.globalData.userinfo.root})
         }
     },
 

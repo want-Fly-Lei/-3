@@ -71,3 +71,41 @@ func ShowChapterContext(ctx *gin.Context) {
 		})
 	}
 }
+
+//更新指定章节章节内容
+func UpdateChapterContext(ctx *gin.Context) {
+	var chapter model.Chapter
+	var err error
+	if err = ctx.ShouldBind(&chapter); err == nil {
+		//fmt.Println(chapter)
+		if chapter.Cid >= 0 && chapter.Cid <= service.GetLastChapterByBid(chapter.Bid).Cid {
+			//说明传入章节数不对
+			ctx.JSON(http.StatusBadRequest, gin.H {
+				"msg":"你传入的章节数不对",
+			})
+			return 
+		}
+		//传入地址
+		chapter.Context = fmt.Sprintf("%s/books/%d/%d.txt", utils.MY_PROJECT_FILE_PATH, chapter.Bid, chapter.Cid)
+		chapter.Time = time.Now()
+		if err = service.UploadChapterByCid(chapter); err == nil { //更新数据成功
+			if err = SaveFileIntoBooks(ctx, chapter.Context); err == nil { //写入文件成功
+				ctx.JSON(http.StatusOK, gin.H{
+					"msg": "ok",
+				})
+			} else {
+				ctx.JSON(http.StatusUnprocessableEntity, gin.H{
+					"msg": err.Error(),
+				})
+			}
+		} else {
+			ctx.JSON(http.StatusUnprocessableEntity, gin.H{
+				"msg": err.Error(),
+			})
+		}
+	} else { // 绑定失败
+		ctx.JSON(http.StatusUnprocessableEntity, gin.H{
+			"msg": err.Error(),
+		})
+	}
+}

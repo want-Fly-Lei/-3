@@ -3,6 +3,7 @@ package controller
 import (
 	"bookSystem/model"
 	"bookSystem/service"
+	_ "fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -71,12 +72,13 @@ func UserRegister(ctx *gin.Context) {
 	}
 }
 
-//用户修改2功能
+//用户修改功能
 func ReSetUser(ctx *gin.Context) {
 	var err error
 	var user model.User
 	//把传入的参数绑定到user
 	if err = ctx.ShouldBind(&user); err == nil {
+		user.Root = 0 // 防止乱搞
 		if err = service.ResetUserById(user.Id,user); err == nil {
 			ctx.JSON(http.StatusOK, gin.H {
 				"msg":"ok",
@@ -91,4 +93,32 @@ func ReSetUser(ctx *gin.Context) {
 			"msg": err.Error(),
 		})
 	}
+}
+
+//管理员修改功能
+func ReSetUserAdmin(ctx *gin.Context) {
+	var err error
+	var user model.User
+	//把传入的参数绑定到user
+	if err = ctx.ShouldBind(&user); err == nil {
+		//fmt.Println(user)
+		if err = service.ResetUserById(user.Id,user); err == nil {
+			ctx.JSON(http.StatusOK, gin.H {
+				"msg":"ok",
+			})
+		} else {
+			ctx.JSON(http.StatusRequestEntityTooLarge, gin.H {
+				"msg":err.Error(),
+			})
+		}
+	} else {
+		ctx.JSON(http.StatusBadRequest, gin.H{
+			"msg": err.Error(),
+		})
+	}
+}
+
+//所搜所有用户
+func AllUser(ctx *gin.Context) {
+	ctx.JSON(http.StatusOK, service.SelectAllUse())
 }
